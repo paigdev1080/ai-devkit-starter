@@ -1,0 +1,214 @@
+# =============================================================================
+# ai-devkit-starter — .gitignore
+# Policy: the repository is tool-agnostic. AI agent tooling (instructions,
+# memory, hooks, graphs, plans) is LOCAL-ONLY and never committed — every
+# developer regenerates it with the README "Per-project setup" step.
+# Patterns omit the trailing "/" so they also match symlinks
+# (e.g. CLAUDE.md -> AGENTS.md, .claude -> .agents).
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# AI agent tooling (local-only)
+# -----------------------------------------------------------------------------
+
+# --- Starter-kit stack -------------------------------------------------------
+# OpenWolf: project memory, index, hooks
+.wolf
+# Graphify: knowledge graph output + config
+graphify-out
+.graphify
+.graphifyrc
+.graphifyignore
+# Superpowers: scratch state only (brainstorm companion, subagent progress).
+# Exception: docs/superpowers/ (specs + plans) IS committed as project history.
+.superpowers
+# RTK: installed globally (`rtk init -g`), writes nothing into the project.
+
+# --- Agent instruction / memory files (any directory) ------------------------
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+AGENTS.override.md
+GEMINI.md
+QWEN.md
+WARP.md
+CRUSH.md
+KIRO.md
+CODEBUDDY.md
+.cursorrules
+.windsurfrules
+.clinerules
+.roorules
+.goosehints
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.github/chatmodes/
+
+# --- Agent config directories ------------------------------------------------
+.claude
+.agent
+.agents
+.gemini
+.codex
+.cursor
+.windsurf
+.codeium
+.kiro
+.continue
+.cline
+.roo
+.aider*
+.opencode
+.kilocode
+.qwen
+.crush
+.warp
+.junie
+.trae
+.augment
+.amazonq
+.devin
+.factory
+.grok
+.kimi
+.pi
+.hermes
+.muse
+.mcp.json
+.agentignore
+.cursorignore
+.geminiignore
+
+# -----------------------------------------------------------------------------
+# Secrets & environment  (never commit; ship a .env.example instead)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+secrets.*
+!secrets.example.*
+.netrc
+.npmrc.local
+
+# -----------------------------------------------------------------------------
+# Operating systems
+# -----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+.directory
+.Trash-*
+.nfs*
+
+# -----------------------------------------------------------------------------
+# Editors & IDEs  (share only curated settings)
+# -----------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.iml
+*.swp
+*.swo
+*.sublime-workspace
+.history/
+.fleet/
+.zed/
+
+# -----------------------------------------------------------------------------
+# Logs, temp, coverage
+# -----------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+*.tmp
+*.bak
+coverage/
+.nyc_output/
+*.lcov
+htmlcov/
+.coverage
+.coverage.*
+
+# -----------------------------------------------------------------------------
+# Language ecosystems (safe defaults — prune what you don't use)
+# -----------------------------------------------------------------------------
+
+# Node / JS / TS
+node_modules/
+.pnpm-store/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.vercel/
+.cache/
+.parcel-cache/
+dist/
+build/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version.local
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+*.egg-info/
+
+# Rust
+target/
+
+# Go
+/bin/
+*.test
+go.work.sum
+
+# JVM
+.gradle/
+*.class
+
+# Infrastructure
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl.bak
